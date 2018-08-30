@@ -1,18 +1,28 @@
 const mongoose =  require('mongoose')
 const User =  require('./user');
 mongoose.connect('mongodb://localhost/ReadFile');
+let fileName = ``;
+
+fileName = process.argv[2];
+console.log(fileName);
 convertExcel = require('excel-as-json').processFile 
 options = {
     sheet:'1',
     isColOriented: false,
     omitEmtpyFields: false
 } 
-convertExcel ('JournAlongDummy Data.xlsx', 'row.json', options, (err, data1) =>{
+convertExcel (fileName, 'row.json', options, (err, data1) =>{
     if (err){
       console.log ("JSON conversion failure:EEEEEEEEEEEE #{err}",err)
     } else{
-        console.log("ther are thew @@@@@@@@@",data1)
-        User.create({user : data1});
+        
+        User.insertMany(data1);
 
 }
     })
+
+    
+
+
+
+    
