@@ -1,0 +1,17 @@
+{
+  "name": "readxlsxfile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "excel-as-json": "^2.0.2",
+    "exceljs": "^1.6.0",
+    "mongoose": "^5.2.10",
+    "xlsjs": "^1.0.1"
+  }
+}
